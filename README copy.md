@@ -38,6 +38,9 @@ mim download mmdet3d \
   --config pointnet2_ssg_2xb16-cosine-200e_scannet-seg \
   --dest checkpoints
 
+### для mac os 
+mim download mmdet3d --config pointnet2_ssg_2xb16-cosine-200e_scannet-seg --dest /workspaces/mmdet3d/mmdetection3d/checkpoints 2>&1 | grep -A 5 "downloading\|successfully"  
+
 python3 demo/pcd_seg_demo.py \
   demo/data/scannet/scene0000_00.bin \
   configs/pointnet2/pointnet2_ssg_2xb16-cosine-200e_scannet-seg.py \
@@ -47,31 +50,29 @@ python3 demo/pcd_seg_demo.py \
   --out-dir outputs
 
 
-source .mmdet3d/bin/activate
-python3.10 -m pip install "torch==2.0.1" "torchvision==0.15.2" -f https://download.pytorch.org/whl/torch_stable.html
-или 
+## мои изменения для mac os 
+
+1й вариант предпочтительнее:
 python3.10 -m pip install "torch==2.0.1+cpu" "torchvision==0.15.2+cpu" -f https://download.pytorch.org/whl/torch_stable.html
 
+или
+python3.10 -m pip install "torch==2.0.1" "torchvision==0.15.2" -f https://download.pytorch.org/whl/torch_stable.html
 
-cd /workspaces/mmdet3d/mmdetection3d
-source /workspaces/mmdet3d/.mmdet3d/bin/activate
-python3 demo_run.py \
+### загружаем конфиг для kitti с проверкой
+mim download mmdet3d --config pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car --dest /workspaces/mmdet3d/mmdetection3d/checkpoints 2>&1 | grep -A 5 "downloading\|successfully"
+
+### создан новый demo_run.py для классификации в kitti
+
+python demo_run.py \
   demo/data/kitti/000008.bin \
   configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car.py \
   checkpoints/hv_pointpillars_secfpn_6x8_160e_kitti-3d-car_20220331_134606-d42d15ed.pth \
   --device cpu \
-  --show \
-  --out-dir outputs 
-
-  python3 demo/pcd_demo.py \
-  demo/data/kitti/000008.bin \
-  configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car.py \
-  checkpoints/hv_pointpillars_secfpn_6x8_160e_kitti-3d-car_20220331_134606-d42d15ed.pth \
-  --device cpu \
-  --show \
   --out-dir outputs
 
-<!-- создан гитигно и должен быть установлен питон 3.10. далее настроить вирт окружение и далее по шагам из скрипта в ридми -->
+mim download mmdet3d --config pointnet2_ssg_2xb16-cosine-200e_scannet-seg --dest /workspaces/mmdet3d/mmdetection3d/checkpoints 2>&1 | grep -A 5 "downloading\|successfully" 
+
+## команды и вывод терминала для отчета по проекту
 
 @MazurenkovK ➜ /workspaces/mmdet3d (main) $ python3.10 -m venv .mmdet3d
 @MazurenkovK ➜ /workspaces/mmdet3d (main) $ source .mmdet3d/bin/activate
@@ -792,7 +793,8 @@ Obtaining file:///workspaces/mmdet3d/mmdetection3d
   Getting requirements to build editable ... error
 ERROR: Failed to build 'file:///workspaces/mmdet3d/mmdetection3d' when getting requirements to build editable
 
-<!-- получен инференс без демонстрации -->
+## получен инференс без демонстрации
+
 python demo/pcd_demo.py \
   demo/data/kitti/000008.bin \
   configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car.py \
@@ -825,7 +827,9 @@ Traceback (most recent call last):
     from mmdet3d.structures import points_to_tensor
 ImportError: cannot import name 'points_to_tensor' from 'mmdet3d.structures' (/workspaces/mmdet3d/mmdetection3d/mmdet3d/structures/__init__.py)
 
-<!-- выводит инференс, но без визуализации -->
+
+## выводит инференс, но без визуализации
+
 python3 demo/pcd_demo.py \
   demo/data/kitti/000008.bin \
   configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car.py \

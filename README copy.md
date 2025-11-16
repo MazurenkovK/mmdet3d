@@ -52,6 +52,25 @@ python3.10 -m pip install "torch==2.0.1" "torchvision==0.15.2" -f https://downlo
 или 
 python3.10 -m pip install "torch==2.0.1+cpu" "torchvision==0.15.2+cpu" -f https://download.pytorch.org/whl/torch_stable.html
 
+
+cd /workspaces/mmdet3d/mmdetection3d
+source /workspaces/mmdet3d/.mmdet3d/bin/activate
+python3 demo_run.py \
+  demo/data/kitti/000008.bin \
+  configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car.py \
+  checkpoints/hv_pointpillars_secfpn_6x8_160e_kitti-3d-car_20220331_134606-d42d15ed.pth \
+  --device cpu \
+  --show \
+  --out-dir outputs 
+
+  python3 demo/pcd_demo.py \
+  demo/data/kitti/000008.bin \
+  configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car.py \
+  checkpoints/hv_pointpillars_secfpn_6x8_160e_kitti-3d-car_20220331_134606-d42d15ed.pth \
+  --device cpu \
+  --show \
+  --out-dir outputs
+
 <!-- создан гитигно и должен быть установлен питон 3.10. далее настроить вирт окружение и далее по шагам из скрипта в ридми -->
 
 @MazurenkovK ➜ /workspaces/mmdet3d (main) $ python3.10 -m venv .mmdet3d
@@ -772,3 +791,58 @@ Obtaining file:///workspaces/mmdet3d/mmdetection3d
   cwd: /workspaces/mmdet3d/mmdetection3d
   Getting requirements to build editable ... error
 ERROR: Failed to build 'file:///workspaces/mmdet3d/mmdetection3d' when getting requirements to build editable
+
+<!-- получен инференс без демонстрации -->
+python demo/pcd_demo.py \
+  demo/data/kitti/000008.bin \
+  configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car.py \
+  checkpoints/hv_pointpillars_secfpn_6x8_160e_kitti-3d-car_20220331_134606-d42d15ed.pth \
+  --device cpu \
+  --out-dir outputs
+/workspaces/mmdet3d/mmdetection3d/mmdet3d/models/dense_heads/anchor3d_head.py:94: UserWarning: dir_offset and dir_limit_offset will be depressed and be incorporated into box coder in the future
+  warnings.warn(
+Loads checkpoint by local backend from path: checkpoints/hv_pointpillars_secfpn_6x8_160e_kitti-3d-car_20220331_134606-d42d15ed.pth
+11/16 16:51:54 - mmengine - WARNING - Failed to search registry with scope "mmdet3d" in the "function" registry tree. As a workaround, the current "function" registry in "mmengine" is used to build instance. This may cause unexpected failure when running the built modules. Please check whether "mmdet3d" is a correct scope, or whether the registry is initialized.
+/workspaces/mmdet3d/.mmdet3d/lib/python3.10/site-packages/mmengine/visualization/visualizer.py:196: UserWarning: Failed to add <class 'mmengine.visualization.vis_backend.LocalVisBackend'>, please provide the `save_dir` argument.
+  warnings.warn(f'Failed to add {vis_backend.__class__}, '
+/workspaces/mmdet3d/.mmdet3d/lib/python3.10/site-packages/torch/functional.py:504: UserWarning: 
+torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered
+internally at ../aten/src/ATen/native/TensorShape.cpp:3483.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Inference ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   
+11/16 16:51:56 - mmengine - INFO - results have been saved at outputs
+(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d/mmdetection3d (main) $ cd /workspaces/mmdet3d/mmdetection3d
+source /workspaces/mmdet3d/.mmdet3d/bin/activate
+python demo_run.py \
+  demo/data/kitti/000008.bin \
+  configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car.py \
+  checkpoints/hv_pointpillars_secfpn_6x8_160e_kitti-3d-car_20220331_134606-d42d15ed.pth \
+  --device cpu \
+  --out-dir outputs \
+  --show
+Traceback (most recent call last):
+  File "/workspaces/mmdet3d/mmdetection3d/demo_run.py", line 15, in <module>
+    from mmdet3d.structures import points_to_tensor
+ImportError: cannot import name 'points_to_tensor' from 'mmdet3d.structures' (/workspaces/mmdet3d/mmdetection3d/mmdet3d/structures/__init__.py)
+
+<!-- выводит инференс, но без визуализации -->
+python3 demo/pcd_demo.py \
+  demo/data/kitti/000008.bin \
+  configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car.py \
+  checkpoints/hv_pointpillars_secfpn_6x8_160e_kitti-3d-car_20220331_134606-d42d15ed.pth \
+  --device cpu \
+  --show \
+  --out-dir outputs
+11/16 17:01:22 - mmengine - WARNING - Display device not found. `--show` is forced to False
+/workspaces/mmdet3d/mmdetection3d/mmdet3d/models/dense_heads/anchor3d_head.py:94: UserWarning: dir_offset and dir_limit_offset will be depressed and be incorporated into box coder in the future
+  warnings.warn(
+Loads checkpoint by local backend from path: checkpoints/hv_pointpillars_secfpn_6x8_160e_kitti-3d-car_20220331_134606-d42d15ed.pth
+11/16 17:01:22 - mmengine - WARNING - Failed to search registry with scope "mmdet3d" in the "function" registry tree. As a workaround, the current "function" registry in "mmengine" is used to build instance. This may cause unexpected failure when running the built modules. Please check whether "mmdet3d" is a correct scope, or whether the registry is initialized.
+/workspaces/mmdet3d/.mmdet3d/lib/python3.10/site-packages/mmengine/visualization/visualizer.py:196: UserWarning: Failed to add <class 'mmengine.visualization.vis_backend.LocalVisBackend'>, please provide the `save_dir` argument.
+  warnings.warn(f'Failed to add {vis_backend.__class__}, '
+/workspaces/mmdet3d/.mmdet3d/lib/python3.10/site-packages/torch/functional.py:504: UserWarning: 
+torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered
+internally at ../aten/src/ATen/native/TensorShape.cpp:3483.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Inference ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   
+11/16 17:01:23 - mmengine - INFO - results have been saved at outputs

@@ -5,4 +5,4 @@ my_file/
 __pycache__/
 .pytest_cache/
 .mmdet3d
-mmdetection3d/
+# mmdetection3d/

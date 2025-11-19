@@ -1,4 +1,5 @@
 # mmdet3d
+```
 Первый проект по mmdet3d
 #!/bin/bash
 
@@ -37,7 +38,7 @@ python3 demo/pcd_demo.py \
 mim download mmdet3d \
   --config pointnet2_ssg_2xb16-cosine-200e_scannet-seg \
   --dest checkpoints
-
+```
 ### для mac os 
 mim download mmdet3d --config pointnet2_ssg_2xb16-cosine-200e_scannet-seg --dest /workspaces/mmdet3d/mmdetection3d/checkpoints 2>&1 | grep -A 5 "downloading\|successfully"  
 

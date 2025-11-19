@@ -1,6 +1,8 @@
 # mmdet3d
+
+Первый проект по mmdet3d  
+Скрипты для установки библиотеки mmdet3d
 ```
-Первый проект по mmdet3d
 #!/bin/bash
 
 set -e
@@ -72,10 +74,10 @@ python demo_run.py \
 mim download mmdet3d --config pointnet2_ssg_2xb16-cosine-200e_scannet-seg --dest /workspaces/mmdet3d/mmdetection3d/checkpoints 2>&1 | grep -A 5 "downloading\|successfully" 
 
 ## команды и вывод терминала для отчета по проекту
-
-@MazurenkovK ➜ /workspaces/mmdet3d (main) $ python3.10 -m venv .mmdet3d
-@MazurenkovK ➜ /workspaces/mmdet3d (main) $ source .mmdet3d/bin/activate
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ pip install numpy==1.26.0
+```
+@UserM ➜ /workspaces/mmdet3d (main) $ python3.10 -m venv .mmdet3d
+@UserM ➜ /workspaces/mmdet3d (main) $ source .mmdet3d/bin/activate
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ pip install numpy==1.26.0
 Collecting numpy==1.26.0
   Using cached numpy-1.26.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.2 MB)
 Installing collected packages: numpy
@@ -83,7 +85,7 @@ Successfully installed numpy-1.26.0
 
 [notice] A new release of pip is available: 23.0.1 -> 25.3
 [notice] To update, run: pip install --upgrade pip
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ pip install --upgrade pip
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ pip install --upgrade pip
 Requirement already satisfied: pip in ./.mmdet3d/lib/python3.10/site-packages (23.0.1)
 Collecting pip
   Using cached pip-25.3-py3-none-any.whl (1.8 MB)
@@ -93,7 +95,7 @@ Installing collected packages: pip
     Uninstalling pip-23.0.1:
       Successfully uninstalled pip-23.0.1
 Successfully installed pip-25.3
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ pip install torch==2.0.1 torchvision==0.15.2 --index-url https://download.pytorch.org/whl/cu118
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ pip install torch==2.0.1 torchvision==0.15.2 --index-url https://download.pytorch.org/whl/cu118
 Looking in indexes: https://download.pytorch.org/whl/cu118
 Collecting torch==2.0.1
   Downloading https://download.pytorch.org/whl/cu118/torch-2.0.1%2Bcu118-cp310-cp310-linux_x86_64.whl (2267.3 MB)
@@ -159,7 +161,7 @@ Building wheels for collected packages: lit
 Successfully built lit
 Installing collected packages: mpmath, lit, cmake, urllib3, typing-extensions, sympy, pillow, networkx, MarkupSafe, idna, filelock, charset-normalizer, certifi, requests, jinja2, triton, torch, torchvision
 Successfully installed MarkupSafe-2.1.5 certifi-2022.12.7 charset-normalizer-2.1.1 cmake-3.25.0 filelock-3.19.1 idna-3.4 jinja2-3.1.6 lit-15.0.7 mpmath-1.3.0 networkx-3.3 pillow-11.3.0 requests-2.28.1 sympy-1.14.0 torch-2.0.1+cu118 torchvision-0.15.2+cu118 triton-2.0.0 typing-extensions-4.15.0 urllib3-1.26.13
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ pip install mmcv==2.1.0 -f https://download.openmmlab.com/mmcv/dist/cu118/torch2.0/index.html
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ pip install mmcv==2.1.0 -f https://download.openmmlab.com/mmcv/dist/cu118/torch2.0/index.html
 Looking in links: https://download.openmmlab.com/mmcv/dist/cu118/torch2.0/index.html
 Collecting mmcv==2.1.0
   Downloading https://download.openmmlab.com/mmcv/dist/cu118/torch2.0.0/mmcv-2.1.0-cp310-cp310-manylinux1_x86_64.whl (98.6 MB)
@@ -245,7 +247,7 @@ Installing collected packages: addict, tomli, termcolor, six, pyyaml, pyparsing,
     Uninstalling numpy-1.26.0:
       Successfully uninstalled numpy-1.26.0
 Successfully installed addict-2.4.0 contourpy-1.3.2 cycler-0.12.1 fonttools-4.60.1 kiwisolver-1.4.9 markdown-it-py-4.0.0 matplotlib-3.10.7 mdurl-0.1.2 mmcv-2.1.0 mmengine-0.10.7 numpy-2.2.6 opencv-python-4.12.0.88 packaging-25.0 platformdirs-4.5.0 pygments-2.19.2 pyparsing-3.2.5 python-dateutil-2.9.0.post0 pyyaml-6.0.3 rich-14.2.0 six-1.17.0 termcolor-3.2.0 tomli-2.3.0 yapf-0.43.0
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ pip list
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ pip list
 Package            Version
 ------------------ ------------
 addict             2.4.0
@@ -291,7 +293,7 @@ triton             2.0.0
 typing_extensions  4.15.0
 urllib3            1.26.13
 yapf               0.43.0
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ pip install numpy==1.26.0
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ pip install numpy==1.26.0
 Collecting numpy==1.26.0
   Downloading numpy-1.26.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (58 kB)
 Downloading numpy-1.26.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.2 MB)
@@ -304,7 +306,7 @@ Installing collected packages: numpy
 ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
 opencv-python 4.12.0.88 requires numpy<2.3.0,>=2; python_version >= "3.9", but you have numpy 1.26.0 which is incompatible.
 Successfully installed numpy-1.26.0
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ pip install -U openmim
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ pip install -U openmim
 Collecting openmim
   Downloading openmim-0.3.9-py2.py3-none-any.whl.metadata (16 kB)
 Collecting Click (from openmim)
@@ -446,7 +448,7 @@ Installing collected packages: pytz, crcmod, tzdata, tqdm, tabulate, setuptools,
     Uninstalling rich-14.2.0:
       Successfully uninstalled rich-14.2.0
 Successfully installed Click-8.3.1 aliyun-python-sdk-core-2.16.0 aliyun-python-sdk-kms-2.16.5 cffi-2.0.0 colorama-0.4.6 crcmod-1.7 cryptography-46.0.3 filelock-3.14.0 jmespath-0.10.0 markdown-3.10 model-index-0.1.11 opendatalab-0.0.10 openmim-0.3.9 openxlab-0.1.3 ordered-set-4.1.0 oss2-2.17.0 packaging-24.2 pandas-2.3.3 pycparser-2.23 pycryptodome-3.23.0 pytz-2023.4 requests-2.28.2 rich-13.4.2 setuptools-60.2.0 tabulate-0.9.0 tqdm-4.65.2 tzdata-2025.2
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ mim install mmengine
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ mim install mmengine
 Looking in links: https://download.openmmlab.com/mmcv/dist/cu118/torch2.0.0/index.html
 Requirement already satisfied: mmengine in ./.mmdet3d/lib/python3.10/site-packages (0.10.7)
 Requirement already satisfied: addict in ./.mmdet3d/lib/python3.10/site-packages (from mmengine) (2.4.0)
@@ -480,7 +482,7 @@ Installing collected packages: numpy
     Uninstalling numpy-1.26.0:
       Successfully uninstalled numpy-1.26.0
 Successfully installed numpy-2.2.6
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ pip list
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ pip list
 Package                Version
 ---------------------- ------------
 addict                 2.4.0
@@ -548,7 +550,7 @@ typing_extensions      4.15.0
 tzdata                 2025.2
 urllib3                1.26.13
 yapf                   0.43.0
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ pip install numpy==1.26.0
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ pip install numpy==1.26.0
 Collecting numpy==1.26.0
   Using cached numpy-1.26.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (58 kB)
 Using cached numpy-1.26.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.2 MB)
@@ -560,7 +562,7 @@ Installing collected packages: numpy
 ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
 opencv-python 4.12.0.88 requires numpy<2.3.0,>=2; python_version >= "3.9", but you have numpy 1.26.0 which is incompatible.
 Successfully installed numpy-1.26.0
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ mim install "mmdet>=3.0.0,<3.3.0"
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ mim install "mmdet>=3.0.0,<3.3.0"
 Looking in links: https://download.openmmlab.com/mmcv/dist/cu118/torch2.0.0/index.html
 Collecting mmdet<3.3.0,>=3.0.0
   Downloading mmdet-3.2.0-py3-none-any.whl.metadata (32 kB)
@@ -596,13 +598,13 @@ Downloading shapely-2.1.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64
 Downloading terminaltables-3.1.10-py2.py3-none-any.whl (15 kB)
 Installing collected packages: terminaltables, shapely, scipy, pycocotools, mmdet
 Successfully installed mmdet-3.2.0 pycocotools-2.0.10 scipy-1.15.3 shapely-2.1.2 terminaltables-3.1.10
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ git clone https://github.com/open-mmlab/mmdetection3d.git
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ git clone https://github.com/open-mmlab/mmdetection3d.git
 Cloning into 'mmdetection3d'...
 remote: Enumerating objects: 21045, done.
 remote: Total 21045 (delta 0), reused 0 (delta 0), pack-reused 21045 (from 1)
 Receiving objects: 100% (21045/21045), 20.53 MiB | 34.58 MiB/s, done.
 Resolving deltas: 100% (14852/14852), done.
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ python -c "import torch, mmcv, mmdet, mmdet3d; \
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ python -c "import torch, mmcv, mmdet, mmdet3d; \
 print(f'Torch {torch.__version__}, MMCV {mmcv.__version__}, MMDet {mmdet.__version__}, MMDet3D {mmdet3d.__version__}')"
 Traceback (most recent call last):
   File "<string>", line 1, in <module>
@@ -619,8 +621,8 @@ Traceback (most recent call last):
   File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
     return _bootstrap._gcd_import(name[level:], package, level)
 ImportError: libGL.so.1: cannot open shared object file: No such file or directory
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ cd mmdetection3d
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d/mmdetection3d (main) $ pip install -v -e .
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ cd mmdetection3d
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d/mmdetection3d (main) $ pip install -v -e .
 Using pip 25.3 from /workspaces/mmdet3d/.mmdet3d/lib/python3.10/site-packages/pip (python 3.10)
 Obtaining file:///workspaces/mmdet3d/mmdetection3d
   Running command installing build dependencies
@@ -667,10 +669,10 @@ Obtaining file:///workspaces/mmdet3d/mmdetection3d
   cwd: /workspaces/mmdet3d/mmdetection3d
   Getting requirements to build editable ... error
 ERROR: Failed to build 'file:///workspaces/mmdet3d/mmdetection3d' when getting requirements to build editable
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d/mmdetection3d (main) $ cd ..
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ pip install 'setuptools~=60.2.0'
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d/mmdetection3d (main) $ cd ..
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ pip install 'setuptools~=60.2.0'
 Requirement already satisfied: setuptools~=60.2.0 in ./.mmdet3d/lib/python3.10/site-packages (60.2.0)
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ pip list
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ pip list
 Package                Version
 ---------------------- ------------
 addict                 2.4.0
@@ -743,8 +745,8 @@ typing_extensions      4.15.0
 tzdata                 2025.2
 urllib3                1.26.13
 yapf                   0.43.0
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d (main) $ cd mmdetection3d
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d/mmdetection3d (main) $ pip install -v -e .
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d (main) $ cd mmdetection3d
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d/mmdetection3d (main) $ pip install -v -e .
 Using pip 25.3 from /workspaces/mmdet3d/.mmdet3d/lib/python3.10/site-packages/pip (python 3.10)
 Obtaining file:///workspaces/mmdet3d/mmdetection3d
   Running command installing build dependencies
@@ -812,7 +814,7 @@ internally at ../aten/src/ATen/native/TensorShape.cpp:3483.)
   return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
 Inference ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   
 11/16 16:51:56 - mmengine - INFO - results have been saved at outputs
-(.mmdet3d) @MazurenkovK ➜ /workspaces/mmdet3d/mmdetection3d (main) $ cd /workspaces/mmdet3d/mmdetection3d
+(.mmdet3d) @UserM ➜ /workspaces/mmdet3d/mmdetection3d (main) $ cd /workspaces/mmdet3d/mmdetection3d
 source /workspaces/mmdet3d/.mmdet3d/bin/activate
 python demo_run.py \
   demo/data/kitti/000008.bin \
@@ -825,10 +827,10 @@ Traceback (most recent call last):
   File "/workspaces/mmdet3d/mmdetection3d/demo_run.py", line 15, in <module>
     from mmdet3d.structures import points_to_tensor
 ImportError: cannot import name 'points_to_tensor' from 'mmdet3d.structures' (/workspaces/mmdet3d/mmdetection3d/mmdet3d/structures/__init__.py)
-
+```
 
 ## выводит инференс, но без визуализации
-
+```
 python3 demo/pcd_demo.py \
   demo/data/kitti/000008.bin \
   configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car.py \
@@ -836,6 +838,7 @@ python3 demo/pcd_demo.py \
   --device cpu \
   --show \
   --out-dir outputs
+
 11/16 17:01:22 - mmengine - WARNING - Display device not found. `--show` is forced to False
 /workspaces/mmdet3d/mmdetection3d/mmdet3d/models/dense_heads/anchor3d_head.py:94: UserWarning: dir_offset and dir_limit_offset will be depressed and be incorporated into box coder in the future
   warnings.warn(
@@ -849,3 +852,4 @@ internally at ../aten/src/ATen/native/TensorShape.cpp:3483.)
   return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
 Inference ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   
 11/16 17:01:23 - mmengine - INFO - results have been saved at outputs
+```

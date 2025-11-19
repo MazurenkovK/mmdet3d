@@ -46,10 +46,8 @@ python3 demo/pcd_seg_demo.py \
   demo/data/scannet/scene0000_00.bin \
   configs/pointnet2/pointnet2_ssg_2xb16-cosine-200e_scannet-seg.py \
   checkpoints/pointnet2_ssg_16x2_cosine_200e_scannet_seg-3d-20class_20210514_143644-ee73704a.pth \
-  --device cuda:0 \
-  --show \
+  --device cpu \
   --out-dir outputs
-
 
 ## мои изменения для mac os 
 
